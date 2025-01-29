@@ -5,19 +5,59 @@ function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    message: '',
+  });
+
+  const [formErrors, setFormErrors] = useState({
+    name: '',
+    email: '',
+    message: '',
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
+  // Validation logic
+  const validate = () => {
+    const errors: { name: string; email: string; message: string } = {
+      name: '',
+      email: '',
+      message: '',
+    };
+
+    if (!formData.name.trim()) {
+      errors.name = 'Name is required.';
+    } else if (formData.name.length < 3) {
+      errors.name = 'Name must be at least 3 characters.';
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.email.trim()) {
+      errors.email = 'Email is required.';
+    } else if (!emailRegex.test(formData.email)) {
+      errors.email = 'Email is not valid.';
+    }
+
+    if (!formData.message.trim()) {
+      errors.message = 'Message is required.';
+    } else if (formData.message.length < 10) {
+      errors.message = 'Message must be at least 10 characters.';
+    }
+
+    setFormErrors(errors);
+    return !Object.values(errors).some((error) => error !== '');
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!validate()) return; // Stop submission if validation fails
+
     setIsSubmitting(true);
-    
+
     // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     console.log('Form submitted:', formData);
     setSubmitted(true);
     setIsSubmitting(false);
@@ -27,7 +67,7 @@ function Contact() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -63,9 +103,13 @@ function Contact() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                    required
+                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 ${
+                      formErrors.name ? 'border-red-500' : 'border-gray-300'
+                    }`}
                   />
+                  {formErrors.name && (
+                    <p className="text-red-500 text-sm mt-1">{formErrors.name}</p>
+                  )}
                 </div>
                 <div className="relative">
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
@@ -77,9 +121,13 @@ function Contact() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                    required
+                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 ${
+                      formErrors.email ? 'border-red-500' : 'border-gray-300'
+                    }`}
                   />
+                  {formErrors.email && (
+                    <p className="text-red-500 text-sm mt-1">{formErrors.email}</p>
+                  )}
                 </div>
                 <div className="relative">
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
@@ -91,9 +139,13 @@ function Contact() {
                     value={formData.message}
                     onChange={handleChange}
                     rows={4}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                    required
+                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 ${
+                      formErrors.message ? 'border-red-500' : 'border-gray-300'
+                    }`}
                   ></textarea>
+                  {formErrors.message && (
+                    <p className="text-red-500 text-sm mt-1">{formErrors.message}</p>
+                  )}
                 </div>
                 <button
                   type="submit"
@@ -119,7 +171,6 @@ function Contact() {
               </form>
             </div>
 
-            {/* Contact Information */}
             <div>
               <div className="hover-lift bg-white rounded-xl shadow-lg p-8 mb-8">
                 <h2 className="text-2xl font-semibold mb-6">Contact Information</h2>

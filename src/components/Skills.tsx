@@ -71,6 +71,10 @@ const Skills = () => {
                                 <span className="text-blue-600">•</span>
                                 <span>Progressive Web Apps (PWA)</span>
                             </li>
+                            <li className="flex items-center space-x-2">
+                                <span className="text-blue-600">•</span>
+                                <span>Mongo DB</span>
+                            </li>
                         </ul>
                     </div>
 
@@ -78,6 +82,10 @@ const Skills = () => {
                         <Layers className="w-12 h-12 text-blue-600 mb-6 group-hover:scale-110 transition-transform" />
                         <h3 className="text-xl font-semibold mb-4">UI/UX Design</h3>
                         <ul className="space-y-2 text-gray-600">
+                            <li className="flex items-center space-x-2">
+                                <span className="text-blue-600">•</span>
+                                <span>Figma</span>
+                            </li>
                             <li className="flex items-center space-x-2">
                                 <span className="text-blue-600">•</span>
                                 <span>Responsive Design</span>
@@ -93,6 +101,10 @@ const Skills = () => {
                             <li className="flex items-center space-x-2">
                                 <span className="text-blue-600">•</span>
                                 <span>Design Systems</span>
+                            </li>
+                            <li className="flex items-center space-x-2">
+                                <span className="text-blue-600">•</span>
+                                <span>User Research & Testing</span>
                             </li>
                         </ul>
                     </div>

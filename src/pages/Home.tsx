@@ -32,7 +32,7 @@ function Home() {
       <header className="relative bg-gradient-to-r from-blue-600 to-indigo-700 text-white pt-24 overflow-hidden">
         <div className="absolute inset-0 bg-grid-white opacity-20"></div>
         <div className="absolute inset-0 bg-gradient-dots opacity-30"></div>
-        <div className="container mx-auto px-6 py-20 relative">
+        <div className="container mx-auto px-6 pt-20 pb-32 relative">
           <div className="max-w-4xl">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-slide-in-left">
               Hi, I'm <span className="text-gradient">Anshu</span>
@@ -43,7 +43,7 @@ function Home() {
             </p>
             <div className="flex gap-6 animate-fade-in" style={{ animationDelay: '0.5s' }}>
               {/* <a
-                href="#contact"
+                href="/contact"
                 className="glass-effect px-8 py-3 rounded-lg font-semibold hover-glow group"
               >
                 <span className="group-hover:animate-bounce inline-block">Hire Me</span>
