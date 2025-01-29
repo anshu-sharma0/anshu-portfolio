@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import Footer from '../components/Footer';
 import Experience from '../components/Experience';
 import Skills from '../components/Skills';
-import Projects from './Projects';
+import { Link } from 'react-router-dom';
 
 function Home() {
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -48,12 +48,12 @@ function Home() {
               >
                 <span className="group-hover:animate-bounce inline-block">Hire Me</span>
               </a> */}
-              <a
-                href="/projects"
+              <Link
+                to="/projects"
                 className="border-2 border-white/30 glass-effect px-8 py-3 rounded-lg font-semibold hover-glow group"
               >
                 <span className="group-hover:animate-bounce inline-block">View Projects</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
