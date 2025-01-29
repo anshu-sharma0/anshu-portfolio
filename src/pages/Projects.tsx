@@ -1,47 +1,61 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { ExternalLink, Github } from 'lucide-react';
 
 const projects = [
   {
-    title: 'E-commerce Platform',
-    description: 'A full-featured e-commerce platform built with Next.js and Stripe integration.',
-    image: 'https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=1000',
-    tags: ['Next.js', 'TypeScript', 'Stripe', 'Tailwind CSS'],
-    liveUrl: '#',
+    title: 'Rolling Around Dashboard',
+    description: 'A real-time dashboard for tracking bike routes. Admins have full control over users, routes, and waypoints. Route Managers manage specific routes, and Users track their routes live. Role-based access ensures easy management.',
+    image: 'images/bike.jpg',
+    tags: ['Next.js', 'TypeScript', 'ShadCn UI', 'Tailwind CSS'],
+    liveUrl: 'https://rolling-around-admin-panel.vercel.app',
     githubUrl: '#',
     features: [
-      'User authentication and authorization',
-      'Product catalog with search and filtering',
-      'Shopping cart and checkout process',
-      'Order management system'
+      'Full control for Admins over users, routes, and waypoints',
+      'Route creation, editing, and deletion by Admin',
+      'Route Managers can manage specific routes and waypoints',
+      'Role-based access with different permissions'
     ]
   },
   {
-    title: 'Task Management App',
-    description: 'A collaborative task management application with real-time updates.',
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1000',
-    tags: ['React', 'Firebase', 'Redux', 'Material-UI'],
-    liveUrl: '#',
+    title: 'Pipeline App',
+    description: 'Pipeline automates prospecting by extracting company and contact details from LinkedIn and generating personalized outreach messages, helping you connect with leads and close deals faster.',
+    image: '/images/pipeline.png',
+    tags: ['React', 'TypeScript', 'Redux', 'Tailwind-UI'],
+    liveUrl: 'https://dev-app.withpipeline.com/',
     githubUrl: '#',
     features: [
       'Real-time collaboration',
-      'Task assignment and tracking',
-      'Project timeline visualization',
-      'File attachment support'
+      'Automated LinkedIn prospecting and lead extraction',
+      'Time-saving automation for sales teams',
+      'Increased efficiency in lead conversion'
     ]
   },
   {
-    title: 'Weather Dashboard',
-    description: 'A beautiful weather dashboard with location-based forecasts.',
-    image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?auto=format&fit=crop&q=80&w=1000',
-    tags: ['React', 'TypeScript', 'Weather API', 'Chart.js'],
-    liveUrl: '#',
+    title: 'Strumming Magician',
+    description: 'Strumming Magician lets users play guitar chords in real-time, built with Express.js and core JavaScript. Users can log in to save, share, or download their songs, making it easy to practice and share music.',
+    image: '/images/guitar.jpg',
+    tags: ['Express.js', 'JavaScript', 'HTML', 'CSS'],
+    liveUrl: 'https://strummingmagician.com/',
     githubUrl: '#',
     features: [
-      'Location-based weather data',
-      'Interactive weather maps',
-      'Historical weather data',
-      'Weather alerts system'
+      'Real-time guitar chord strumming',
+      'Built with Express.js and core JavaScript',
+      'User login to save, share, or download songs',
+      'Easy to track and share musical creations'
+    ]
+  },
+  {
+    title: 'AI ChatBot',
+    description: 'The AI Chatbot uses the Gemini API for smart, responsive conversations with an intuitive UI. It’s built as a PWA for a smooth mobile app experience, providing seamless interactions across devices.',
+    image: '/images/ai.jpg',
+    tags: ['React', 'TypeScript', 'Gemini API', 'PWA'],
+    liveUrl: 'https://real-ai-chat-bot.vercel.app/',
+    githubUrl: '#',
+    features: [
+      'Powered by Gemini API for intelligent responses',
+      'User-friendly, responsive UI',
+      'PWA for a smooth mobile app experience',
+      'Seamless interactions across devices'
     ]
   }
 ];
@@ -71,7 +85,7 @@ function Projects() {
   }, []);
 
   return (
-    <div className="pt-24 min-h-screen bg-gray-50">
+    <div className="pt-12 min-h-screen bg-gray-50">
       <div className="container mx-auto px-6 py-12">
         <h1 className="text-4xl font-bold mb-4 animate-slide-in-left">Featured Projects</h1>
         <p className="text-gray-600 mb-12 max-w-2xl animate-slide-in-right">
@@ -90,14 +104,14 @@ function Projects() {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="absolute inset-0 w-full h-full  transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 </div>
                 <div className="p-8">
                   <h2 className="text-2xl font-bold mb-4">{project.title}</h2>
                   <p className="text-gray-600 mb-6">{project.description}</p>
-                  
+
                   <div className="mb-6">
                     <h3 className="font-semibold mb-2">Key Features:</h3>
                     <ul className="space-y-2">
@@ -124,6 +138,7 @@ function Projects() {
                   <div className="flex gap-4">
                     <a
                       href={project.liveUrl}
+                      target='_blank'
                       className="flex items-center gap-2 text-blue-600 hover:text-blue-700 transition-colors group"
                     >
                       <ExternalLink size={20} className="group-hover:animate-bounce" />
