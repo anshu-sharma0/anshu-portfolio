@@ -89,7 +89,7 @@ function Projects() {
       <div className="container mx-auto px-6 py-12">
         <h1 className="text-4xl font-bold mb-4 animate-slide-in-left">Featured Projects</h1>
         <p className="text-gray-600 mb-12 animate-slide-in-right">
-          Here are some of my recent projects that showcase my skills in frontend development, UI/UX design, and technical implementation.
+          Here are some of my recent projects that showcase my skills in Web development, UI/UX design, and technical implementation.
         </p>
 
         <div className="space-y-20">
