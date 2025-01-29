@@ -88,9 +88,8 @@ function Projects() {
     <div className="pt-12 min-h-screen bg-gray-50">
       <div className="container mx-auto px-6 py-12">
         <h1 className="text-4xl font-bold mb-4 animate-slide-in-left">Featured Projects</h1>
-        <p className="text-gray-600 mb-12 max-w-2xl animate-slide-in-right">
-          Here are some of my recent projects that showcase my skills in frontend development,
-          UI/UX design, and technical implementation.
+        <p className="text-gray-600 mb-12 animate-slide-in-right">
+          Here are some of my recent projects that showcase my skills in frontend development, UI/UX design, and technical implementation.
         </p>
 
         <div className="space-y-20">
@@ -144,13 +143,13 @@ function Projects() {
                       <ExternalLink size={20} className="group-hover:animate-bounce" />
                       <span className="group-hover:underline">Live Demo</span>
                     </a>
-                    <a
+                    {/* <a
                       href={project.githubUrl}
                       className="flex items-center gap-2 text-gray-600 hover:text-gray-800 transition-colors group"
                     >
                       <Github size={20} className="group-hover:animate-bounce" />
                       <span className="group-hover:underline">View Code</span>
-                    </a>
+                    </a> */}
                   </div>
                 </div>
               </div>
