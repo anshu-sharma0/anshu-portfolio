@@ -42,12 +42,12 @@ function Home() {
               with React.js and Next.js
             </p>
             <div className="flex gap-6 animate-fade-in" style={{ animationDelay: '0.5s' }}>
-              {/* <a
+              <a
                 href="/contact"
                 className="glass-effect px-8 py-3 rounded-lg font-semibold hover-glow group"
               >
                 <span className="group-hover:animate-bounce inline-block">Hire Me</span>
-              </a> */}
+              </a>
               <Link
                 to="/projects"
                 className="border-2 border-white/30 glass-effect px-8 py-3 rounded-lg font-semibold hover-glow group"
