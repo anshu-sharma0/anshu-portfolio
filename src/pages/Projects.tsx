@@ -21,7 +21,7 @@ const projects = [
     description: 'Pipeline automates prospecting by extracting company and contact details from LinkedIn and generating personalized outreach messages, helping you connect with leads and close deals faster.',
     image: '/images/pipeline.png',
     tags: ['React', 'TypeScript', 'Redux', 'Tailwind-UI'],
-    liveUrl: 'https://dev-app.withpipeline.com/',
+    liveUrl: 'https://app.withpipeline.com/',
     githubUrl: '#',
     features: [
       'Real-time collaboration',
